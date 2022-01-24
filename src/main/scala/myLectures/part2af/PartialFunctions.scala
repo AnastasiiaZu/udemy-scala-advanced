@@ -75,7 +75,10 @@ object PartialFunctions extends App {
     case "hello" => "Hi my name is HAL9000"
     case "bye" => "there is no return"
     case "call mom" => "unable to find contact"
+    case _ => "answer not defined"
   }
 
   scala.io.Source.stdin.getLines().foreach(line => println("chatbot says: " + chatbot(line)))
+
+
 }
