@@ -71,5 +71,5 @@ object MySet {
 
 object MySetPlayground extends App {
   val s = MySet(1,2,3)
-  s + 5 ++ MySet(-4, -5) + 3 foreach println
+  s + 5 ++ MySet(-4, -5) + 3 flatMap (x => MySet(x, 10 * x)) filter (_ % 2 == 0) foreach println
 }
