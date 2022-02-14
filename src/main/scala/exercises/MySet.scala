@@ -142,4 +142,8 @@ object MySet {
 object MySetPlayground extends App {
   val s = MySet(1,2,3)
   s + 5 ++ MySet(-4, -5) + 3 flatMap (x => MySet(x, 10 * x)) filter (_ % 2 == 0) foreach println
+
+  val negative = !s
+  println(negative(2))
+  println(negative(5))
 }
