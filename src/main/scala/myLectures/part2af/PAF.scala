@@ -62,7 +62,7 @@ object PAF extends App {
   def method: Int = 42
   def parenthesesMethod(): Int = 42
 
-  byName(23) // ok
+/*  byName(23) // ok
   byName(method) // ok
   byName(parenthesesMethod()) // ok
   byName(parenthesesMethod) // not ok
@@ -74,6 +74,5 @@ object PAF extends App {
   byFunction(method) // not ok!!!
   byFunction(parenthesesMethod)
   byFunction(() => 46) // ok
-  byFunction(parenthesesMethod _) // ok
-
+  byFunction(parenthesesMethod _) */
 }
