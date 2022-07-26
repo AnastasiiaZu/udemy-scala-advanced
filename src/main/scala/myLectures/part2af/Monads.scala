@@ -29,4 +29,12 @@ object Monads extends App {
   case class Fail(e: Throwable) extends Attempt[Nothing] {
     def flatMap[B](f: Nothing => Attempt[B]): Attempt[B] = this
   }
+
+  class Lazy[+A](value: => A) { // by-name prevents the value from being evaluated when the object is constructed
+    def flatMap[B](f: A => Lazy[B]): Lazy[B] = f(value)
+  }
+
+  object Lazy {
+    def apply[A](value: => A): Lazy[A] = new Lazy(value)
+  }
 }
